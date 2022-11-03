@@ -1,0 +1,57 @@
+server:
+  port: 40406
+  forward-headers-strategy: native
+  error:
+    include-message: always
+spring:
+  devtools:
+    restart:
+      eanbled: false
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  output:
+    ansi:
+      enabled: always
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  flyway:
+    enabled: false
+  servlet:
+    multipart:
+      max-file-size: 10240MB
+      max-request-size: 10240MB
+      resolve-lazily: true
+  data:
+    redis:
+      repositories:
+        enabled: false
+management:
+  endpoints:
+    web:
+      base-path: /yuque/hooks/actuator
+      exposure:
+        include: [ 'httptrace', 'metrics', 'env', 'logfile', 'health' ]
+  health:
+    redis:
+      enabled: false
+
+springfox:
+  documentation:
+    enabled: false
+
+yuque:
+  download-timeout: 5m
+  cache: memory
+  work-dir: ${user.home}/.yuque
+  halo:
+    username: ridup
+    password: ruanjian2020/
+    host: https://ridup.cn
+    publishOn: publish
+mix-push:
+  company-id: ww8f8318b4e18da251
+  agent-id: 1000003
+  secret: h21eCgK7YWiGBtQ3d7fCWwtoZdQR5Lh6xFJlntOihSc
+  media-id: 2YQ8bMQhcPIi7kvIadp7A07Kkuue7czq2Y74nGP4pgh0q19DPHMNaEZ79556JRb-u
